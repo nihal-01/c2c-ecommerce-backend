@@ -1,11 +1,13 @@
 const express = require("express");
 require("dotenv").config();
 require("./db/config");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // middle wares
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
